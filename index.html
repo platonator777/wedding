@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-bg"></div>
+  <div class="main-container">
+    <!-- Блок 1: Hero -->
+    <section class="hero" id="hero">
+      <img src="photo-hero.jpg" alt="Молодожены" class="hero-img">
+    </section>
+    <!-- Блок 2: Текст и дата -->
+    <section class="invite-text" id="invite-text">
+      <div class="invite-title">РОДНЫЕ</div>
+      <div class="invite-message">Мы так вас любим! Поэтому приглашаем стать свидетелями дня рождения нашей семьи.</div>
+      <div class="invite-date">23.07.2025</div>
+      <div class="invite-message">не существует шести или семи чудес света — есть только одно: любовь</div>
+    </section>
+    <!-- Блок 3: Фото молодоженов -->
+    <section class="photo-block fullscreen-photo no-padding-mobile" id="photo-block-1">
+      <img src="photo-couple-1.jpg" alt="Молодожены" class="hero-img">
+    </section>
+    <!-- Блок 4: Место -->
+    <section class="place-block" id="place-block">
+      <img src="photo-place.jpg" alt="Место свадьбы" class="place-img">
+      <div class="place-overlay">
+        <div class="place-main-title">МЕСТО</div>
+        <div class="place-title">Турбаза «Жемчужный двор»</div>
+        <div class="place-title">ул. Набережная, 68</div>
+      </div>
+    </section>
+    <!-- Блок 5: Программа -->
+    <section class="program-block" id="program-block">
+      <div class="invite-title">ПРОГРАММА</div>
+      <div class="program-table">
+        <div class="program-row"><span class="program-time">14:00</span><span class="program-event">Сбор гостей</span></div>
+        <div class="program-row"><span class="program-time">14:40</span><span class="program-event">Фуршет</span></div>
+        <div class="program-row"><span class="program-time">15:30</span><span class="program-event">Регистрация</span></div>
+        <div class="program-row"><span class="program-time">18:00</span><span class="program-event">Праздничный ужин</span></div>
+        <div class="program-row"><span class="program-time">00:00</span><span class="program-event">Окончание вечера</span></div>
+      </div>
+    </section>
+    <!-- Блок 6: Детали -->
+    <section class="details-block" id="details-block">
+      <div class="invite-title">ДЕТАЛИ</div>
+      <div class="details-text">Здесь будет информация о дресс-коде, подарках и других важных деталях.</div>
+    </section>
+    <!-- Блок 7: Фото -->
+    <section class="photo-block fullscreen-photo no-padding-mobile" id="photo-block-2">
+      <img src="photo-cabbage.jpg" alt="Фото" class="hero-img">
+    </section>
+    <!-- Блок 8: Таймер -->
+    <section class="timer-block" id="timer-block">
+      <div class="invite-title">До встречи осталось</div>
+      <div class="timer" id="timer">
+        <div class="timer-section"><span id="days">00</span><div class="timer-label">дней</div></div>
+        <div class="timer-section"><span id="hours">00</span><div class="timer-label">часов</div></div>
+        <div class="timer-section"><span id="minutes">00</span><div class="timer-label">минут</div></div>
+        <div class="timer-section"><span id="seconds">00</span><div class="timer-label">секунд</div></div>
+      </div>
+    </section>
+    <!-- Блок 9: Форма -->
+    <section class="form-block" id="form-block">
+      <div class="invite-title">Форма обратной связи</div>
+      <form id="contact-form" name="submit-to-google-sheet">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="email" name="email" placeholder="Ваш email" required>
+        <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+      <div id="form-success" style="display:none; color:green; margin-top:1rem;">Спасибо! Ваш ответ отправлен.</div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 
