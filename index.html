@@ -53,27 +53,48 @@
     <section class="photo-block fullscreen-photo no-padding-mobile" id="photo-block-2">
       <img src="photo-cabbage.jpg" alt="Фото" class="hero-img">
     </section>
-    <!-- Блок 8: Таймер -->
-    <section class="timer-block" id="timer-block">
-      <div class="invite-title">До встречи осталось</div>
-      <div class="timer" id="timer">
-        <div class="timer-section"><span id="days">00</span><div class="timer-label">дней</div></div>
-        <div class="timer-section"><span id="hours">00</span><div class="timer-label">часов</div></div>
-        <div class="timer-section"><span id="minutes">00</span><div class="timer-label">минут</div></div>
-        <div class="timer-section"><span id="seconds">00</span><div class="timer-label">секунд</div></div>
-      </div>
-    </section>
+
     <!-- Блок 9: Форма -->
     <section class="form-block" id="form-block">
-      <div class="invite-title">Форма обратной связи</div>
+      <div class="invite-title">Анкета</div>
+      <div class="info-text">А еще мы очень хотим, чтобы у вас остались самые лучшие воспоминания о нашей свадьбе свадьбе.</div>
+      <div class="info-text">Поэтому просим вас заполнить анкету ниже</div>
       <form id="contact-form" name="submit-to-google-sheet">
         <input type="text" name="name" placeholder="Ваше имя" required>
         <input type="email" name="email" placeholder="Ваш email" required>
         <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+        <div class="attendance-radio">
+          <label>
+            <input type="radio" name="come" value="1" required> Приду
+          </label>
+          <label>
+            <input type="radio" name="come" value="0" required> Не приду
+          </label>
+        </div>
         <button type="submit">Отправить</button>
       </form>
-      <div id="form-success" style="display:none; color:green; margin-top:1rem;">Спасибо! Ваш ответ отправлен.</div>
+      <div id="form-success" style="display:none; color:green; margin-top:1rem; text-align: center;">Спасибо! Ваш ответ отправлен.</div>
     </section>
+
+  <section class="details-block" id="details-block">
+    <div class="info-text">Если вы планируете творческий подарок для нас, или у вас есть вопросы, то просим держать связь с нашим организатором</div>
+    <div class="info-text">Анна: +7 (911) 111-11-11</div>
+    <div class="info-text">Александра: +7 (911) 111-11-11</div>
+  </section>
+
+  <section class="timer-block" id="timer-block">
+    <div class="invite-title">До встречи осталось</div>
+    <div class="timer" id="timer">
+      <div class="timer-section"><span id="days">00</span><div class="timer-label">дней</div></div>
+      <div class="timer-section"><span id="hours">00</span><div class="timer-label">часов</div></div>
+      <div class="timer-section"><span id="minutes">00</span><div class="timer-label">минут</div></div>
+      <div class="timer-section"><span id="seconds">00</span><div class="timer-label">секунд</div></div>
+    </div>
+  </section>
+
+  <section class="photo-block fullscreen-photo no-padding-mobile" id="photo-block-1">
+    <img src="couple.JPG" alt="Молодожены" class="hero-img">
+  </section>
   </div>
 
   <script src="script.js"></script>

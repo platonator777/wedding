@@ -209,6 +209,14 @@ section {
   text-align: left;
 }
 
+.info-text {
+  font-size: 1.1rem;
+  color: #888;
+  max-width: 700px;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
 .timer-block {
   background: #fff;
   padding: 2rem 2.5rem 1.2rem 2.5rem;
@@ -263,15 +271,16 @@ form {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  width: 100%;
   max-width: 400px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 input, textarea {
   width: 100%;
-  max-width: 400px;
   padding: 0.7rem 1rem;
   border: 1px solid #bbb;
-  border-radius: 0.7rem;
+  border-radius: 0.3rem;
   font-size: 1rem;
   font-family: inherit;
   background: #fff;
@@ -280,20 +289,42 @@ input, textarea {
   box-sizing: border-box;
 }
 button[type="submit"] {
+  width: 100%;
   background: #111;
   color: #fff;
   border: none;
   padding: 0.8rem 2rem;
-  border-radius: 0.7rem;
+  border-radius: 0.3rem;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
   font-weight: 400;
-  margin: 0 auto;
-  display: block;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+button[type="submit"]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+button[type="submit"]:hover::after {
+  left: 100%;
 }
 button[type="submit"]:hover {
   background: #333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .photo-block {
@@ -309,6 +340,68 @@ button[type="submit"]:hover {
   border-radius: 1.5rem;
   filter: grayscale(1);
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.attendance-radio {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.attendance-radio label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.7rem;
+  border: 1px solid #bbb;
+  border-radius: 0.3rem;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.attendance-radio label:hover {
+  color: #111;
+  border-color: #111;
+}
+
+.attendance-radio input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #888;
+  border-radius: 0.2rem;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.attendance-radio input[type="radio"]:checked {
+  border-color: #111;
+  background: #111;
+}
+
+.attendance-radio input[type="radio"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: #fff;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.attendance-radio input[type="radio"]:hover {
+  border-color: #111;
 }
 
 @media (max-width: 700px) {
@@ -361,12 +454,19 @@ button[type="submit"]:hover {
     font-size: 2.3rem;
   }
   form {
-    max-width: 100vw;
     padding: 0 1.5rem;
+    width: 100%;
+    max-width: 100%;
   }
-  input, textarea {
-    max-width: 100vw;
-    border-radius: 0.5rem;
-    font-size: 1rem;
+  input, textarea, button[type="submit"], .attendance-radio {
+    width: 100%;
+    max-width: 100%;
+  }
+  .attendance-radio {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .attendance-radio label {
+    width: auto;
   }
 } 
