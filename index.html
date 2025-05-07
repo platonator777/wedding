@@ -26,7 +26,16 @@
     </section>
     <!-- Блок 4: Место -->
     <section class="place-block" id="place-block">
-      <img src="photo-place.jpg" alt="Место свадьбы" class="place-img">
+      <div class="slider">
+        <div class="slider-container">
+          <img src="photo-place.jpg" alt="Место свадьбы" class="place-img">
+          <img src="photo-place-2.jpg" alt="Место свадьбы" class="place-img">
+        </div>
+        <div class="slider-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
       <div class="place-overlay">
         <div class="place-main-title">МЕСТО</div>
         <div class="place-title">Турбаза «Жемчужный двор»</div>
@@ -71,7 +80,10 @@
             <input type="radio" name="come" value="0" required> Не приду
           </label>
         </div>
-        <button type="submit">Отправить</button>
+        <button type="submit">
+          <span>Отправить</span>
+          <div class="loading-spinner"></div>
+        </button>
       </form>
       <div id="form-success" style="display:none; color:green; margin-top:1rem; text-align: center;">Спасибо! Ваш ответ отправлен.</div>
     </section>
@@ -95,8 +107,8 @@
   <section class="photo-block fullscreen-photo no-padding-mobile" id="photo-block-1">
     <img src="couple.JPG" alt="Молодожены" class="hero-img">
   </section>
-  </div>
 
+</div>
   <script src="script.js"></script>
 </body>
 </html> 

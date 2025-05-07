@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@375;400;600&display=swap');
 
 body {
   margin: 0;
@@ -43,7 +43,6 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1);
   border-radius: 0;
   box-shadow: none;
 }
@@ -101,7 +100,52 @@ section {
   justify-content: center;
   margin-bottom: 0;
   margin-top: -2rem;
+  overflow: hidden;
 }
+
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slider-container {
+  width: 200%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider-container img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: #fff;
+}
+
 .place-img {
   width: 100%;
   height: 100%;
@@ -162,7 +206,7 @@ section {
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
-  margin-left: -3rem;
+  margin-left: 2rem;
 }
 .program-row {
   display: flex;
@@ -178,12 +222,12 @@ section {
   font-weight: 300;
   color: #111;
   min-width: 48%;
-  text-align: right;
-  margin-right: 1.2rem;
+  text-align: left;
+  margin-right: -4rem;
 }
 .program-event {
   font-size: 1.3rem;
-  color: #222;
+  color: #888;
   text-align: left;
   min-width: 40%;
 }
@@ -290,10 +334,10 @@ input, textarea {
 }
 button[type="submit"] {
   width: 100%;
+  height: 45px;
   background: #111;
   color: #fff;
   border: none;
-  padding: 0.8rem 2rem;
   border-radius: 0.3rem;
   font-size: 1.1rem;
   cursor: pointer;
@@ -302,7 +346,11 @@ button[type="submit"] {
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 button[type="submit"]::after {
   content: '';
   position: absolute;
@@ -316,15 +364,57 @@ button[type="submit"]::after {
     rgba(255, 255, 255, 0.3),
     transparent
   );
-  transition: 0.5s;
+  animation: shine 3s infinite;
 }
-button[type="submit"]:hover::after {
-  left: 100%;
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  20% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
-button[type="submit"]:hover {
-  background: #333;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+button[type="submit"] span {
+  position: relative;
+  z-index: 1;
+}
+
+.loading-spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: 2;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button[type="submit"].loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+button[type="submit"].loading .loading-spinner {
+  display: block;
+}
+
+button[type="submit"].loading span {
+  visibility: hidden;
 }
 
 .photo-block {
@@ -404,6 +494,15 @@ button[type="submit"]:hover {
   border-color: #111;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 700px) {
   .main-container {
     max-width: 100vw;
@@ -444,7 +543,8 @@ button[type="submit"]:hover {
   .program-time {
     font-size: 2.3rem;
     min-width: 48vw;
-    margin-right: 0.5rem;
+    margin-right: -5rem;
+    margin-left: 7rem;
   }
   .program-event {
     font-size: 1.3rem;
@@ -454,19 +554,32 @@ button[type="submit"]:hover {
     font-size: 2.3rem;
   }
   form {
-    padding: 0 1.5rem;
+    padding: 0;
     width: 100%;
     max-width: 100%;
   }
   input, textarea, button[type="submit"], .attendance-radio {
     width: 100%;
-    max-width: 100%;
+    font-size: 16px;
+    padding: 12px;
+    margin-bottom: 0rem;
+    box-sizing: border-box;
   }
   .attendance-radio {
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 1rem;
+    margin: 1rem 0;
+    width: 100%;
   }
   .attendance-radio label {
-    width: auto;
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
   }
+
 } 

@@ -33,11 +33,43 @@ const form = document.forms['submit-to-google-sheet']
 
 form.addEventListener('submit', e => {
   e.preventDefault()
+  const submitButton = form.querySelector('button[type="submit"]');
+  submitButton.classList.add('loading');
+  
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
     .then(response => {
       document.getElementById('form-success').style.display = 'block';
       form.reset();
+      submitButton.classList.remove('loading');
       console.log('Success!', response);
     })
-    .catch(error => console.error('Error!', error.message))
+    .catch(error => {
+      console.error('Error!', error.message);
+      submitButton.classList.remove('loading');
+    })
 })
+
+// Слайдер
+const sliderContainer = document.querySelector('.slider-container');
+const dots = document.querySelectorAll('.dot');
+let currentSlide = 0;
+
+function updateSlider() {
+  sliderContainer.style.transform = `translateX(-${currentSlide * 50}%)`;
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentSlide);
+  });
+}
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentSlide = index;
+    updateSlider();
+  });
+});
+
+// Автоматическое переключение слайдов каждые 5 секунд
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % 2;
+  updateSlider();
+}, 5000);
