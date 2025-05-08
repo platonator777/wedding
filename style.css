@@ -67,19 +67,22 @@ section {
   text-align: left;
 }
 .invite-date {
-  font-size: 3.2rem;
-  font-weight: 300;
-  color: #111;
-  text-align: right;
-  margin-bottom: 2rem;
-  margin-left: 0.2em;
-}
-.invite-message {
   font-size: 1.2rem;
-  color: #888;
+  color: #111;
   margin-bottom: 1.5rem;
   max-width: 600px;
   text-align: left;
+}
+.invite-message {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  text-align: left;
+}
+.invite-message .invite-date {
+  color: #111;
+  font-weight: 600;
 }
 .invite-quote {
   font-size: 1.1rem;
@@ -227,7 +230,7 @@ section {
 }
 .program-event {
   font-size: 1.3rem;
-  color: #888;
+  color: #444;
   text-align: left;
   min-width: 40%;
 }
@@ -248,14 +251,14 @@ section {
 }
 .details-text {
   font-size: 1.1rem;
-  color: #888;
+  color: #444;
   max-width: 700px;
   text-align: left;
 }
 
 .info-text {
   font-size: 1.1rem;
-  color: #888;
+  color: #444;
   max-width: 700px;
   text-align: left;
   margin-bottom: 1rem;
@@ -442,9 +445,9 @@ button[type="submit"].loading span {
 
 .attendance-radio label {
   flex: 1;
-  display: flex;
+  display: flex; 
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   gap: 0.5rem;
   font-size: 1.1rem;
   color: #888;
@@ -527,7 +530,7 @@ button[type="submit"].loading span {
   /* .invite-text, .details-block {
     padding: 2.5rem 1.5rem 1.2rem 1.5rem;
   } */
-  .invite-title, .invite-date {
+  .invite-title {
     font-size: 2rem;
   }
   .program-title, .details-title, .form-title, .timer-title, .place-main-title {
