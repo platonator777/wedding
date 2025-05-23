@@ -71,8 +71,8 @@
     <!-- Блок 9: Форма -->
     <section class="form-block" id="form-block">
       <div class="invite-title">Анкета</div>
-      <div class="info-text">А еще мы очень хотим, чтобы у вас остались самые лучшие воспоминания о нашей свадьбе свадьбе.</div>
-      <div class="info-text">Поэтому просим вас заполнить анкету ниже</div>
+      <div class="info-text">Пожалуйста, подтвердите свое присутствие до 05.07.2025.</div>
+      <div class="info-text">Если у вас есть аллергия на продукты питания или цветы, предупредите нас об этом.</div>
       <form id="contact-form" name="submit-to-google-sheet">
         <input type="text" name="name" placeholder="Ваше имя" required>
         <input type="phone" name="phone" placeholder="Ваш телефон" required>
@@ -94,9 +94,14 @@
     </section>
 
   <section class="details-block" id="details-block">
-    <div class="info-text">Если вы планируете творческий подарок для нас, или у вас есть вопросы, то просим держать связь с нашим организатором</div>
-    <div class="info-text">Анна: +7 (911) 111-11-11</div>
-    <div class="info-text">Александра: +7 (911) 111-11-11</div>
+    <div class="info-text">Если вы подготовили для нас сюрприз или творческий подарок, не забудьте уведомить нашего ведущего</div>
+    <div class="info-text">
+      <a href="tel:+79824601361" style="color: inherit; text-decoration: none; cursor: pointer; position: relative;" onclick="copyPhone(event)">
+        Вадим: +7 982 460 1361
+        <span style="font-size: 0.8em; margin-left: 5px; opacity: 0.7;">(нажмите, чтобы скопировать)</span>
+      </a>
+      <div id="copyNotification" style="display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 1000;">Телефон скопирован!</div>
+    </div>
   </section>
 
   <section class="timer-block" id="timer-block">
@@ -115,5 +120,18 @@
 
 </div>
   <script src="script.js"></script>
+  <script>
+    function copyPhone(event) {
+      event.preventDefault();
+      const phone = '+79824601361';
+      navigator.clipboard.writeText(phone).then(() => {
+        const notification = document.getElementById('copyNotification');
+        notification.style.display = 'block';
+        setTimeout(() => {
+          notification.style.display = 'none';
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html> 
