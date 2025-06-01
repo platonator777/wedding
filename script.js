@@ -73,3 +73,11 @@ setInterval(() => {
   currentSlide = (currentSlide + 1) % 2;
   updateSlider();
 }, 5000);
+
+// Scroll to content functionality
+const scrollToContentButton = document.getElementById('scrollToContent');
+const inviteTextSection = document.getElementById('invite-text');
+
+scrollToContentButton.addEventListener('click', () => {
+  inviteTextSection.scrollIntoView({ behavior: 'smooth' });
+});
