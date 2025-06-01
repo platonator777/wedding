@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@375;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   background: #fff;
   color: #111;
 }
@@ -563,26 +563,19 @@ button[type="submit"].loading span {
   }
   input, textarea, button[type="submit"], .attendance-radio {
     width: 100%;
-    font-size: 16px;
-    padding: 12px;
-    margin-bottom: 0rem;
+    max-width: 100%;
     box-sizing: border-box;
   }
   .attendance-radio {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 1rem;
-    margin: 1rem 0;
     width: 100%;
+    margin: 1rem 0;
   }
   .attendance-radio label {
     flex: 1;
-    padding: 12px;
-    font-size: 16px;
+    margin: 0 0.5rem;
     text-align: center;
-    width: 100%;
-    box-sizing: border-box;
   }
-
 } 
